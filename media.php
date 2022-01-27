@@ -8,18 +8,33 @@
     // Validação para tratar se o botão foi clicado
 
     if(isset($_POST['btnCalc']))
+    {   
+         // Recebendo dados utilizando o POST do formulário
+
+        $nota1 = $_POST['txtn1'];
+        $nota2 = $_POST['txtn2'];
+        $nota3 = $_POST['txtn3'];
+        $nota4 = $_POST['txtn4'];
+
+    // Validação para tratamento de caixa vazia
+    if($_POST['txtn1'] == "" || $_POST['txtn2'] == "" || $_POST['txtn3'] == "" || $_POST['txtn4'] == "")
     {
-    // Recebendo dados utilizando o POST do formulário
+        echo('<p class="msgErro">É obrigatóro preencher todos os campos para realizar o calculo!</p>');
+    }else{
 
-    $nota1 = $_POST['txtn1'];
-    $nota2 = $_POST['txtn2'];
-    $nota3 = $_POST['txtn3'];
-    $nota4 = $_POST['txtn4'];
-
-    $media = ($nota1 + $nota2 + $nota3 + $nota4) / 4;
+    // Validação para tratamento de valores invalidos
+    if(!is_numeric($nota1) || !is_numeric($nota2) || !is_numeric($nota3) || !is_numeric($nota4))
+    {
+        echo('<p class="msgErro">Para realizar o calculo, todos os dados devem estar validos!</p>');
+    }else
+    {
+         // Realizando o calculo da Média
+        $media = ($nota1 + $nota2 + $nota3 + $nota4) / 4;
     }
-   
+}
 
+}
+   
 ?>
 
 <!DOCTYPE html>

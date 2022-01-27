@@ -62,7 +62,13 @@ input{
     text-decoration: none;
 }
 
-
+.msgErro{
+    font-family: Verdana;
+    font-size: 1em;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 
